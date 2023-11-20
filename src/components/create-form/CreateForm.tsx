@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { useFormStatus } from 'react-dom';
 
 import { HiXCircle } from 'react-icons/hi2';
 
@@ -10,6 +11,24 @@ export type QuestionType = {
   type: string;
   title: string;
 };
+
+function SubmitButton() {
+  const status = useFormStatus();
+
+  return (
+    <button
+      className="border-2 text-neutral-content text-center text-2xl border-neutral-content bg-neutral w-full mt-6 py-5 rounded font-bold hover:bg-base-content disabled:opacity-80 disabled:cursor-not-allowed"
+      type="submit"
+      disabled={status.pending}
+    >
+      {status.pending ? (
+        <span className="loading loading-spinner loading-md" />
+      ) : (
+        'Create Form'
+      )}
+    </button>
+  );
+}
 
 export default function CreateForm({ createFormAction }: any) {
   const [questions, setQuestions] = useState<QuestionType[]>([]);
@@ -114,12 +133,7 @@ export default function CreateForm({ createFormAction }: any) {
         </div>
 
         <div className="flex justify-between gap-8 xl:mx-32 text-center">
-          <button
-            className="border-2 text-neutral-content text-2xl border-neutral-content bg-neutral w-full mt-6 py-5 rounded font-bold hover:bg-base-content"
-            type="submit"
-          >
-            Create Form
-          </button>
+          <SubmitButton />
 
           <Link
             className="border-2 text-neutral-content text-2xl border-neutral-content bg-neutral w-full mt-6 py-5 rounded font-bold hover:bg-base-content"

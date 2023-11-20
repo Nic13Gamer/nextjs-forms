@@ -1,5 +1,6 @@
 import { QuestionType } from '@/components/create-form/CreateForm';
 import Question from '@/components/form/Question';
+import SubmitButton from '@/components/form/SubmitButton';
 import prisma from '@/db';
 import { Form } from '@prisma/client';
 import Link from 'next/link';
@@ -58,6 +59,13 @@ export default async function Page({ params }: { params: { id: string } }) {
     <main className="container mx-auto p-4">
       <header className="flex justify-between items-center">
         <h1 className="text-4xl font-bold">NextJS Forms</h1>
+
+        <Link
+          href={`/form/${id}/results`}
+          className="border-2 border-base-300 bg-base-200 px-10 py-1 rounded font-bold hover:bg-base-300"
+        >
+          View form results
+        </Link>
       </header>
 
       <div className="p-6" />
@@ -76,12 +84,7 @@ export default async function Page({ params }: { params: { id: string } }) {
               ))}
 
               <div className="flex justify-between gap-5 p-4">
-                <button
-                  className="border-2 text-center text-neutral-content text-xl border-neutral-content bg-neutral w-full mt-2 py-3 rounded font-bold hover:bg-base-content"
-                  type="submit"
-                >
-                  Submit
-                </button>
+                <SubmitButton />
                 <Link
                   href="/"
                   className="border-2 text-center text-neutral-content text-xl border-neutral-content bg-neutral w-full mt-2 py-3 rounded font-bold hover:bg-base-content"

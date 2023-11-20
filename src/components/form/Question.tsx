@@ -4,7 +4,7 @@ export default function Question({ question }: { question: QuestionType }) {
   return (
     <div className="p-4">
       <h2 className="text-lg flex justify-between">
-        {question.title}:<span className="text-red-600">*</span>
+        {question.title}:<span className="text-red-600 font-semibold">*</span>
       </h2>
 
       <input
