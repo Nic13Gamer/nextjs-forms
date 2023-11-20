@@ -4,11 +4,11 @@ import { revalidatePath } from 'next/cache';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
-async function createForm(questions: object, formData: FormData) {
+async function createForm(questions: object[], formData: FormData) {
   'use server';
 
   const title = formData.get('title')?.toString();
-  if (!questions || !title) return;
+  if (!questions || !title || questions.length === 0) return;
 
   await prisma.form.create({
     data: {
