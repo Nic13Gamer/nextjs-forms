@@ -1,5 +1,5 @@
-import Form from '@/components/home/Form';
-import RefreshFormsButton from '@/components/home/RefreshFormsButton';
+import Form from '@/components/home/form';
+import RefreshFormsButton from '@/components/home/refresh-forms-button';
 import prisma from '@/db';
 import Link from 'next/link';
 

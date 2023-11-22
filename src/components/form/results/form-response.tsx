@@ -1,4 +1,4 @@
-import { QuestionType } from '@/components/create-form/CreateForm';
+import { QuestionType } from '@/components/create-form/create-form';
 import { Form, FormResponse } from '@prisma/client';
 
 type FormResponseType = {

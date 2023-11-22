@@ -1,4 +1,4 @@
-import CreateForm from '@/components/create-form/CreateForm';
+import CreateForm from '@/components/create-form/create-form';
 import prisma from '@/db';
 import { revalidatePath } from 'next/cache';
 import Link from 'next/link';

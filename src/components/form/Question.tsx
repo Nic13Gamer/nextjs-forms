@@ -1,4 +1,4 @@
-import { QuestionType } from '../create-form/CreateForm';
+import { QuestionType } from '../create-form/create-form';
 
 export default function Question({ question }: { question: QuestionType }) {
   return (

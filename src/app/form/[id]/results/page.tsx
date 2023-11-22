@@ -1,4 +1,4 @@
-import FormResponse from '@/components/form/results/FormResponse';
+import FormResponse from '@/components/form/results/form-response';
 import prisma from '@/db';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';

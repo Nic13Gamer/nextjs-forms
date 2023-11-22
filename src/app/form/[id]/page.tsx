@@ -1,6 +1,6 @@
-import { QuestionType } from '@/components/create-form/CreateForm';
-import Question from '@/components/form/Question';
-import SubmitButton from '@/components/form/SubmitButton';
+import { QuestionType } from '@/components/create-form/create-form';
+import Question from '@/components/form/question';
+import SubmitButton from '@/components/form/submit-button';
 import prisma from '@/db';
 import { Form } from '@prisma/client';
 import Link from 'next/link';
