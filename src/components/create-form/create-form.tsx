@@ -67,10 +67,7 @@ export default function CreateForm({ createFormAction }: any) {
     if (index > -1) {
       questionsArray.splice(index, 1);
     }
-    setQuestions(questionsArray);
-
-    // workaround for refreshing questions
-    setRemoveQuestionMode(false);
+    setQuestions([...questionsArray]);
   }
 
   return (
